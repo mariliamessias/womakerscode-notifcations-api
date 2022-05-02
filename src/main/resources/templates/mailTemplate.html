@@ -3,17 +3,88 @@
 <head>
     <title th:remove="all">Template for HTML email with inline image</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <style>
+
+
+      body {
+        background-color: #f6f6f6;
+        font-family: sans-serif;
+        -webkit-font-smoothing: antialiased;
+        font-size: 14px;
+        line-height: 1.4;
+        margin: 0;
+        padding: 0;
+        -ms-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%;
+      }
+
+    div {
+        display: flex;
+        width: auto;
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    p span{
+        font-weight: bold;
+    }
+
+    section{
+        width: 80%;
+        background: #ebe4e4;
+        padding: 20px;
+        border-radius: 5px;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    img {
+        width: 200px;
+    }
+
+    a {
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: #7a176d;
+        color: #fff;
+        font-size: 15px;
+    }
+
+    </style>
+
 </head>
 <body>
-<p>
-    Olá, <span th:text="${name}">Peter Static</span>!
-</p>
-<p th:if="${name.length() > 10}">
-    Wow! You've got a long name (more than 10 chars)!
-</p>
-<p>
-    You have been successfully subscribed to the <b>CodingNConcepts</b> on
-    <span th:text="${subscriptionDate}">28-12-2012</span>
-</p>
+
+<div>
+    <section>
+
+        <img src="https://d33wubrfki0l68.cloudfront.net/3d218442b01b3bdbf82b739df4d07e450234bf9e/08a8f/assets/images/womakerscode-brand.png"><img>
+        <p>
+            Olá, <span th:text="${name}">Peter Static</span>,
+        </p>
+
+        <p>
+            Ficamos muito felizes em informar que a sua inscrição no evento <span th:text="${event}">Peter Static</span> foi confirmada com sucesso.
+        </p>
+        <p>
+            Contamos com sua presença, até lá!
+        </p>
+
+        <a href="www.google.com">
+            Acessar o site
+        </a>
+    </section>
+</div>
+
 </body>
 </html>

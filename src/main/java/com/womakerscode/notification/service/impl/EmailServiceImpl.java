@@ -31,19 +31,12 @@ public class EmailServiceImpl implements EmailService {
     @Override
     public void send(SendEmaillMessage message) throws MessagingException {
 
-//        SimpleMailMessage msg = new SimpleMailMessage();
-//        msg.setTo(message.getEmail());
-//        msg.setFrom(userName);
-//
-//        msg.setSubject("Sua inscrição no evento foi registrada com sucesso!");
-//        msg.setText("Hello World \n Spring Boot Email");
-//
-//        javaMailSender.send(msg);
         MimeMessage mimeMessage = javaMailSender.createMimeMessage();
 
         MimeMessageHelper helper = new MimeMessageHelper(mimeMessage, MimeMessageHelper.MULTIPART_MODE_MIXED_RELATED, StandardCharsets.UTF_8.name());
         Context context = new Context();
-        context.setVariables(Map.of("name", message.getName()));
+        context.setVariables(
+                Map.of("name", message.getName(), "event", message.getEventName()));
         helper.setFrom(userName);
         helper.setTo(message.getEmail());
         helper.setSubject("Sua inscrição no evento foi registrada com sucesso!");
