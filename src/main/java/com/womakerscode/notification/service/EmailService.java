@@ -1,8 +1,7 @@
 package com.womakerscode.notification.service;
 
-import com.womakerscode.notification.controller.request.EmailRequest;
-import com.womakerscode.notification.controller.response.EmailResponse;
+import com.womakerscode.notification.model.SendEmaillMessage;
 
 public interface EmailService {
-    EmailResponse send(EmailRequest emailRequest);
+    void send(SendEmaillMessage emailRequest);
 }
