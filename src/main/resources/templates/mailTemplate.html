@@ -3,9 +3,10 @@
 <head>
     <title th:remove="all">Template for HTML email with inline image</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
 
     <style>
-
 
       body {
         background-color: #f6f6f6;
@@ -17,6 +18,11 @@
         padding: 0;
         -ms-text-size-adjust: 100%;
         -webkit-text-size-adjust: 100%;
+        width: 100%;
+         display: flex;
+        flex-direction: column;
+        align-items: center;
+
       }
 
     div {
@@ -58,6 +64,8 @@
         background-color: #7a176d;
         color: #fff;
         font-size: 15px;
+        text-decoration: none;
+        cursor: pointer;
     }
 
     </style>
@@ -68,7 +76,7 @@
 <div>
     <section>
 
-        <img src="https://d33wubrfki0l68.cloudfront.net/3d218442b01b3bdbf82b739df4d07e450234bf9e/08a8f/assets/images/womakerscode-brand.png"><img>
+        <img src="https://d33wubrfki0l68.cloudfront.net/3d218442b01b3bdbf82b739df4d07e450234bf9e/08a8f/assets/images/womakerscode-brand.png"/>
         <p>
             Olá, <span th:text="${name}">Peter Static</span>,
         </p>
