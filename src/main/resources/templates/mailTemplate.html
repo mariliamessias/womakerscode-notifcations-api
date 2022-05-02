@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:remove="all">Template for HTML email with inline image</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<p>
+    Olá, <span th:text="${name}">Peter Static</span>!
+</p>
+<p th:if="${name.length() > 10}">
+    Wow! You've got a long name (more than 10 chars)!
+</p>
+<p>
+    You have been successfully subscribed to the <b>CodingNConcepts</b> on
+    <span th:text="${subscriptionDate}">28-12-2012</span>
+</p>
+</body>
+</html>

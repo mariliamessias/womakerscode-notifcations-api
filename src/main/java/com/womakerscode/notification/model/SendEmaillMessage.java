@@ -10,6 +10,7 @@ import lombok.*;
 public class SendEmaillMessage {
     private String messageId;
     private String email;
+    private String name;
     private String type;
     private String eventName;
 }

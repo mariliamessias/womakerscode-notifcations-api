@@ -7,6 +7,8 @@ import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import javax.mail.MessagingException;
+
 @Component
 public class MessageListener {
 
@@ -14,7 +16,7 @@ public class MessageListener {
     private EmailService emailService;
 
     @RabbitListener(queues = MQConfig.QUEUE)
-    public void listener(SendEmaillMessage message){
+    public void listener(SendEmaillMessage message) throws MessagingException {
         emailService.send(message);
     }
 
