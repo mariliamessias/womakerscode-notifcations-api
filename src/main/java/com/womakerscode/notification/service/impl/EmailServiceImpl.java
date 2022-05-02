@@ -36,7 +36,11 @@ public class EmailServiceImpl implements EmailService {
         MimeMessageHelper helper = new MimeMessageHelper(mimeMessage, MimeMessageHelper.MULTIPART_MODE_MIXED_RELATED, StandardCharsets.UTF_8.name());
         Context context = new Context();
         context.setVariables(
-                Map.of("name", message.getName(), "event", message.getEventName()));
+                Map.of(
+                        "name", message.getName(),
+                        "event", message.getEventName(),
+                        "eventDate", message.getEventDate()
+                ));
         helper.setFrom(userName);
         helper.setTo(message.getEmail());
         helper.setSubject("Sua inscrição no evento foi registrada com sucesso!");

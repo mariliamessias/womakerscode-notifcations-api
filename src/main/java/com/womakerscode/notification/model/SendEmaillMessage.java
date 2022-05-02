@@ -13,4 +13,5 @@ public class SendEmaillMessage {
     private String name;
     private String type;
     private String eventName;
+    private String eventDate;
 }
