@@ -22,14 +22,12 @@ Para ver documentação completa da arquitetura do projeto de conclusão constru
 
   spring-boot-starter-web
   spring-boot-starter-test
-  spring-cloud-starter-oauth2
   spring-boot-starter-validation
-  spring-boot-starter-data-jpa
-  passay
+  spring-boot-starter-mail
+  spring-boot-starter-amqp
+  spring-boot-starter-thymeleaf
   junit-jupiter-api
   spring-secutiry
-  mysql-connector
-  h2database
   lombok
   azurewebapp
   dbunit
